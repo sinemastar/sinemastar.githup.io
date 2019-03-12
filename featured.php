@@ -6,7 +6,7 @@ if(get_theme_option('featured_posts') != '') {
 		var myGallery = new gallery($('myGallery'), {
 			timed: true,
 			delay: 6000,
-			slideInfoZoneOpacity: 1.0,
+			slideInfoZoneOpacity: 0.8,
 			showCarousel: false 
 		});
 	}

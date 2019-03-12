@@ -1,21 +1,19 @@
+    <div class="span-24">
+	<div id="footer">Copyright &copy; <a href="<?php bloginfo('home'); ?>"><strong><?php bloginfo('name'); ?></strong></a>  - <?php bloginfo('description'); ?></div>
+    <?php /* 
+                    All links in the footer should remain intact. 
+                    These links are all family friendly and will not hurt your site in any way. 
+                    Warning! Your site may stop working if these links are edited or deleted 
+                    
+                    You can buy this theme without footer links online at http://newwpthemes.com/buy/?theme=moviezine 
+                */ ?>
+    <div id="credits">Powered by <a href="http://wordpress.org/"><strong>WordPress</strong></a> | Designed by: <a href="http://gamefriends.com">video games</a> | Thanks to <a href="http://trucks.reviewitonline.net">Trucks</a> and <a href="http://suv.reviewitonline.net">SUV</a></div>
+</div>
+</div>
+</div>
 <?php
-	// html code of the footer placed in bottom.php
-	global $SMTheme, $return;
-	if (!isset($_POST['smt_layout'])||$_POST['smt_layout']!=$SMTheme->layout) {
-		?> </div><!-- #content --><?php
-	}
-
-	if ( isset($_POST['smt_layout'])) {
-		$return['content']=ob_get_contents();
-		$return['layout']=$SMTheme->layout;
-		$return['sidebars_type']=$SMTheme->sidebars_type;
-		ob_end_clean();
-	}
-
-
-	if(!isset($_POST['smt_layout'])){
-		get_template_part('bottom');
-	} else {
-		header('Content-type: application/json');
-		echo json_encode($return);
-	}
+	 wp_footer();
+	echo get_theme_option("footer")  . "\n";
+?>
+</body>
+</html>
